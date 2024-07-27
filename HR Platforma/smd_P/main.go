@@ -11,6 +11,7 @@ import (
 )
 
 func main() {
+	
 	cfg := cp.Load()
 
 	dbCon := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
