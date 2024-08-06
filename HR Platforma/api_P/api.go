@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+
 func NewGin(um *ps.UserManager, rm *ps.ResumeManager, rcm *ps.RecruiterManager, cm *ps.CompanyManager, vm *ps.VacancyManager, im *ps.InterviewManager) *gin.Engine {
 	r := gin.Default()
 
