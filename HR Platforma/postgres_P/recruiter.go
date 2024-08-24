@@ -25,6 +25,7 @@ func (rm *RecruiterManager) Create(recruiter *structs_P.RecruiterCreate) error {
 	return nil
 }
 
+
 func (rm *RecruiterManager) GetByID(recruiterID string) (*structs_P.RecruiterAll, error) {
 	recruiter := structs_P.RecruiterAll{}
 	query = `SELECT r.id, r.name, r.email, r.phone_number, r.birthday, r.gender, r.created_at, c.name, c.location, c.workers 
@@ -52,6 +53,7 @@ func (rm *RecruiterManager) GetAllRecruiter(gender, companyid, from, to string) 
 	args := []interface{}{}
 	
 	paramIndex := 1
+
 	
 	if gender != "" {
 		query += fmt.Sprintf(" AND gender = $%d", paramIndex)
