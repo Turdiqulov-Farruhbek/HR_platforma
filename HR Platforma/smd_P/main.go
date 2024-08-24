@@ -14,10 +14,10 @@ func main() {
 	
 	cfg := cp.Load()
 
-	dbCon := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
+	dbConn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
 		cfg.PostgresHost, cfg.PostgresPort, cfg.PostgresUser, cfg.PostgresPassword, cfg.PostgresDatabase)
-	fmt.Println(dbCon)
-	db, err := sql.Open("postgres", dbCon)
+	fmt.Println(dbConn)
+	db, err := sql.Open("postgres", dbConn)
 	if err != nil {
 		panic(err)
 	}
