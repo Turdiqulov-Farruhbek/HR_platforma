@@ -15,6 +15,7 @@ func NewRecruiterManager(conn *sql.DB) *RecruiterManager {
 	return &RecruiterManager{con: conn}
 }
 
+
 func (rm *RecruiterManager) Create(recruiter *structs_P.RecruiterCreate) error {
 	query = `INSERT INTO recruiter (name, email, phone_number, birthday, gender, company_id) VALUES ($1, $2, $3, $4, $5, $6)`
 	_, err = rm.con.Exec(query, recruiter.Name, recruiter.Email, recruiter.PhoneNumber, recruiter.Birthday, recruiter.Gender, recruiter.CompanyID)
